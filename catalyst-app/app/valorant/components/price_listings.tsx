@@ -7,21 +7,26 @@ const PriceListings = async (props: {price: number}) => {
     const listItems = Array.from(Array(valo_prices.currency.length).keys()).map(async (id: any) => {
         const item_price = (await price_in_money(props.price, id, 'valorant')).toFixed(2);
         const per_dollar = (await currency_per_dollar(id, 'valorant')).toFixed(2);
+        var remainder = valo_prices.currency[id] - props.price;
+        if (remainder < 0) {
+            remainder = 0
+        }
         return (
         <li key={id}>   
-        <ul className={styles.priceList}>
-            <li className={styles.priceTableComponent}>{valo_prices.currency[id]}</li>
-            <li className={styles.priceTableComponent}>${valo_prices.prices[id]}</li>
-            <li className={styles.priceTableComponent}>{per_dollar}</li>
-            <li className={styles.priceTableComponent}>${item_price}</li>
-            <li className={styles.priceTableComponent}>{valo_prices.currency[id] - props.price}</li>
-        </ul>
-    </li>
+            <ul className={styles.priceList}>
+                <li className={styles.priceTableComponent}>{valo_prices.currency[id]}</li>
+                <li className={styles.priceTableComponent}>${valo_prices.prices[id]}</li>
+                <li className={styles.priceTableComponent}>{per_dollar}</li>
+                <li className={styles.priceTableComponent}>${item_price}</li>
+                <li className={styles.priceTableComponent}>{remainder}</li>
+            </ul>
+        </li>
     )});
     return (
         <div>
-            <ul>
-                <li></li>
+            <ul className={styles.priceList}>
+                <li className={styles.priceTableComponent}>Pack Amount</li>
+                <li className={styles.priceTableComponent}>Pack Amount</li>
             </ul>
             <ul>
                 {listItems}
