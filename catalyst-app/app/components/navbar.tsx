@@ -18,14 +18,23 @@ const Navbar = () => {
           </div>
         </div>
         <div id="pullout-menu-content">
-          <img id="selector" src="icons/star.png" />
-          <ul className="menu-list">
-            <li className="menu-item">League of Legend</li>
-            <li className="menu-item">Valorant</li>
-            <li className="menu-item">Genshin Impact</li>
-            <li className="menu-item">Honkai: Star Rails (coming soon)</li>
-            <li className="menu-item">Arknights (coming soon)</li>
-          </ul>
+          <div className="menu-list">
+            <Link href="/league">
+              <div className="menu-item">League of Legend</div>
+            </Link>
+            <Link href="/valorant">
+              <div className="menu-item">Valorant</div>
+            </Link>
+            <Link href="/">
+              <div className="menu-item">Genshin Impact</div>
+            </Link>
+            <Link href="/">
+              <div className="menu-item">Honkair Star Rail (coming soon)</div>
+            </Link>
+            <Link href="/">
+              <div className="menu-item">Arkknights (coming soon)</div>
+            </Link>
+          </div>
         </div>
       </div>
       <header>

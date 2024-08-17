@@ -5,6 +5,10 @@ html, body {
     overflow-x: hidden;
 }
 
+a {
+    text-decoration: none;
+}
+
 header {
     width: 100%;
 }
@@ -111,19 +115,18 @@ h1 {
 }
 
 #pullout-menu {
-    display: none;
     position: fixed;
     z-index: 3;
     width: 20rem;
     height: 100%;
     background-color: white;
     padding-top: 1rem;
-
+    transform: translateX(-100%);
 }
 
 #pullout-menu-header {
     background-color: white;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 #pullout-menu-content {
@@ -131,14 +134,23 @@ h1 {
     height: 100%;
 }
 
-.menu-item {
-    padding: 0.5rem 0rem;
-    border: 1px solid black;
+.menu-list {
+    padding-top: 0.5rem;
 }
 
-#selector {
-    position: absolute;
-    top: -9.5rem;
+.menu-item {
+    padding: 0.7rem 1rem;
+    margin: 0.4rem 1rem;
+    transition: ease 1s;
+}
+
+.menu-list a {
+    color: black;
+}
+
+.menu-item:hover {
+    background-color: #E5E5E5;
+    border-radius: 2.5rem;
 }
 
 .game-list-header {
@@ -271,18 +283,33 @@ h1 {
   }
 
 .about-container {
-    margin: 45rem 0;
+    margin-top: 45rem;
+    margin-bottom: 10rem;
     display: flex;
 }
 
 .about-div {
     width: 50%;
-    height: 20rem;
+    padding: 5rem;
 }
 
 .about-header {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: relative;
+    top: -30%;
+    left: -8%;
+}
+
+.about-header .delimiter {
+    margin-top: 0.4rem;
+    height: 0.1rem;
+    width: 5.3rem;
+    background-color: black;
+}
+
+.about-header-div {
+    background-color: #D8D8D8;
 }
 
 .about-verence {
@@ -290,15 +317,25 @@ h1 {
     text-align: center;
     font-family: 'Nova Cut';
     color: #A9A9A9;
-    background-color: #D8D8D8;
 }
 
 .about-content {
     background-color: #5551FF;
     color: white;
-    margin: auto;
 }
 
 .about-div-header {
     font-family: 'Nova Cut';
 }
+
+@keyframes menu-slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
