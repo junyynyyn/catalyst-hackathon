@@ -29,7 +29,10 @@ const Navbar = () => {
         </div>
       </div>
       <header>
-        <h1 id="title">Verence</h1>
+        <Link href="/">
+          <h1 id="title">Verence</h1>
+        </Link>
+
         <nav>
           <ul className="nav-bar">
             <li>
