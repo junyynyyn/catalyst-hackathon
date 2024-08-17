@@ -42,7 +42,7 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <Link href="/valorant/page.tsx" className="nav-btn">
+              <Link href="/valorant" className="nav-btn">
                 My Profile
               </Link>
               <a href="" className="nav-btn cart-btn">
