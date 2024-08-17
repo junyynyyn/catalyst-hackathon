@@ -1,20 +1,23 @@
 import React from 'react'
-import {valo_prices, valo_currency_per_dollar, get_lowest_required_value, price_in_money} from '../../price_utils';
+import { get_prices, currency_per_dollar, get_lowest_required_value, price_in_money} from '../../price_utils';
 import styles from './price_listing.module.css';
 
-const PriceListings = (props: {price: number}) => {
-    const listItems = valo_prices.ids.map((id) => 
-        <li key={id.toString()}>
-            <ul className={styles.priceList}>
-                <li className={styles.priceTableComponent}>{valo_prices.premium[id]}</li>
-                <li className={styles.priceTableComponent}>${valo_prices.cost[id]}</li>
-                <li className={styles.priceTableComponent}>${valo_currency_per_dollar(id).toFixed(2)}</li>
-                <li className={styles.priceTableComponent}>${price_in_money(props.price, id).toFixed(2)}</li>
-                <li className={styles.priceTableComponent}>{valo_prices.premium[id] - props.price}</li>
-
-            </ul>
-        </li>
-    );
+const PriceListings = async (props: {price: number}) => {
+    const valo_prices = await get_prices('valorant');
+    const listItems = Array.from(Array(valo_prices.currency.length).keys()).map(async (id: any) => {
+        const item_price = (await price_in_money(props.price, id, 'valorant')).toFixed(2);
+        const per_dollar = (await currency_per_dollar(id, 'valorant')).toFixed(2);
+        return (
+        <li key={id}>   
+        <ul className={styles.priceList}>
+            <li className={styles.priceTableComponent}>{valo_prices.currency[id]}</li>
+            <li className={styles.priceTableComponent}>${valo_prices.prices[id]}</li>
+            <li className={styles.priceTableComponent}>{per_dollar}</li>
+            <li className={styles.priceTableComponent}>${item_price}</li>
+            <li className={styles.priceTableComponent}>{valo_prices.currency[id] - props.price}</li>
+        </ul>
+    </li>
+    )});
     return (
         <div>
             <ul>

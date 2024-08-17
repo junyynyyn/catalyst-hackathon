@@ -1,34 +1,47 @@
-// Functions relating to currency calculations
-const valo_prices = {
-    ids: [0,1,2,3,4,5],
-    premium: [525, 1025, 2175, 3975, 5800, 9750],
-    cost: [7.99, 14.99, 30.99, 55.99, 79.99, 129.99]
-};
+import prisma from '../lib/prisma'
 
-function valo_currency_per_dollar(index: number) {
-    return valo_prices.premium[index] / valo_prices.cost[index];
+// Functions relating to currency calculations
+
+async function get_prices(game_string: string) {
+    const db_prices: any = await prisma.price.findMany({
+        where: {game: game_string}
+    });
+    const prices: any = {currency: [], prices: []}
+    for (let i=0;i<db_prices.length;i++) {
+        prices.currency.push(db_prices[i].currency);
+        prices.prices.push(db_prices[i].price);
+    }
+
+    return prices;
 }
 
-function get_lowest_required_value(amount: number) {
+async function currency_per_dollar(index: number, game_string: string) {
+    const game_prices: any = await get_prices(game_string);
+    return game_prices.currency[index] / game_prices.prices[index];
+}
+
+function get_lowest_required_value(amount: number, game_string: string) {
     // Gets lowest single price pack for an amount
-    for (let i=0;i<valo_prices.premium.length;i++) {
-        if (valo_prices.premium[i] >= amount) {
-            return valo_prices.cost[i];
+    const prices: any = get_prices(game_string);
+
+    for (let i=0;i<prices.currency.length;i++) {
+        if (prices.currency[i] >= amount) {
+            return prices.cost[i];
         }
     }
 }
 
-function price_in_money(amount: number, convert_index: number) {
+async function price_in_money(amount: number, convert_index: number, game_string: string) {
     // Gets item price in AUD for an item cost
     // Get currency per dollar from index
     // Divide cost by currency per dollar.
-    var cost_per_dollar = valo_currency_per_dollar(convert_index);
+    var cost_per_dollar: number = await currency_per_dollar(convert_index, game_string);
     return amount / cost_per_dollar;
 }
 
 export { 
-    valo_prices, 
-    valo_currency_per_dollar,
+    get_prices,
+    currency_per_dollar,
     get_lowest_required_value,
     price_in_money,
 };
