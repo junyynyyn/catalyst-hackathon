@@ -27,7 +27,7 @@ model Price {
 model Item {
   id Int @id @default(autoincrement())
   game String
-  max_price Int
-  min_price Int
-
+  price Int
+  item_name String
+  picture String
 }

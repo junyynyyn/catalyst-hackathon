@@ -58,6 +58,7 @@ async function get_lowest_cost(amount: number, game_string: string) {
                 price_sum.push(prices_arrays.prices[i]);
                 break;
             }
+            // If combined cost is < than the bigger value, add the 2 lower ones
         }
     }
 
