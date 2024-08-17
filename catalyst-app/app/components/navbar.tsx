@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import React from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <Link href="league/page.tsx" className="nav-btn">
+              <Link href="/league/page.tsx" className="nav-btn">
                 My Profile
               </Link>
               <a href="" className="nav-btn cart-btn">
