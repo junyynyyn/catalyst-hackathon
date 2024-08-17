@@ -41,9 +41,9 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <a href="league/page.tsx" className="nav-btn">
+              <Link href="league/page.tsx" className="nav-btn">
                 My Profile
-              </a>
+              </Link>
               <a href="" className="nav-btn cart-btn">
                 Basket (0)
               </a>
