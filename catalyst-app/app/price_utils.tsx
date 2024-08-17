@@ -1,5 +1,6 @@
 // Functions relating to currency calculations
 const valo_prices = {
+    ids: [0,1,2,3,4,5],
     premium: [525, 1025, 2175, 3975, 5800, 9750],
     cost: [7.99, 14.99, 30.99, 55.99, 79.99, 129.99]
 };

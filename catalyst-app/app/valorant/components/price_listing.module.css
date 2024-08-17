@@ -1,0 +1,9 @@
+.priceList {
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.priceTableComponent {
+    padding: 5px;
+}
