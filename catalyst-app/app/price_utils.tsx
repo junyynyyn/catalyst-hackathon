@@ -18,11 +18,16 @@ function get_lowest_required_value(amount: number) {
 }
 
 function price_in_money(amount: number, convert_index: number) {
-
+    // Gets item price in AUD for an item cost
+    // Get currency per dollar from index
+    // Divide cost by currency per dollar.
+    var cost_per_dollar = valo_currency_per_dollar(convert_index);
+    return amount / cost_per_dollar;
 }
 
 export { 
     valo_prices, 
     valo_currency_per_dollar,
-    get_lowest_required_value
+    get_lowest_required_value,
+    price_in_money,
 };
