@@ -111,6 +111,7 @@ h1 {
 }
 
 #pullout-menu {
+    display: none;
     position: fixed;
     z-index: 3;
     width: 20rem;
