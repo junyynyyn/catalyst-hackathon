@@ -3,6 +3,7 @@ import LowestCost from "../../components/lowest_cost";
 import PriceListings from "@/app/components/price_listings";
 import { get_item } from "@/app/item_utils";
 import { useParams } from "next/navigation";
+import Link from "next/link";
 
 export default async function ItemPage({
   params,
@@ -79,13 +80,20 @@ export default async function ItemPage({
               </div>
               <div className="pack-cost">$7.99</div>
             </div>
-            <div className="pack">1000</div>
-            <div className="pack">500</div>
-            <div className="pack">1000</div>
+            <div className="pack">
+              <div className="pack-currency">
+                <img src="images/images.jpeg" />
+                525
+              </div>
+              <div className="pack-cost">$14.99</div>
+            </div>
+            1025
           </div>
           <div className="pack-col-2">
-            <div className="product-total">Total: $$$</div>
-            <div className="add-to-cart-btn">Add to Basket</div>
+            <div className="product-total">Total: $21.99</div>
+            <Link href="/">
+              <div className="add-to-cart-btn">Add to Basket</div>
+            </Link>
           </div>
         </div>
       </div>
