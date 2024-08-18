@@ -193,6 +193,14 @@ h1 {
     background-color:#FAFAF5;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 1.4rem;
+    transition: transform 1s;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.game-item:hover {
+    transform: translateY(-5px);
 }
 
 .game-item img {
@@ -206,10 +214,12 @@ h1 {
 .game-item-content {
     text-align: left;
     margin: 0.8rem;
+    font-size: 1.5rem;
 }
 
 .game-item-name {
     font-weight: 900;
+    color: black;
 }
 
 .game-item-price {
