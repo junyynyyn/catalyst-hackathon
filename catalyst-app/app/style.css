@@ -33,6 +33,7 @@ h1 {
     top: 1.7rem;
     font-size: 2rem;
     margin: 0;
+    color: black;
 }
 
 .cart-btn {
@@ -157,6 +158,10 @@ h1 {
     border-bottom: 1px solid gray;
     margin: 0 5rem;
     margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }
 
 .game-title {
@@ -207,6 +212,29 @@ h1 {
 
 .game-item-desc {
     margin-top: 0.8rem;
+}
+
+.organise-opt-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.organise-opt {
+    border: 1px solid #C2C2C2;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    color: black;
+    border-radius: 2.5rem;
+    margin-bottom: -1rem;
+    
+}
+
+.organise-opt:hover {
+    background-color: black;
+    color: white;
 }
 
 
@@ -338,4 +366,3 @@ h1 {
 		transform: translateX(0);
 	}
 }
-
