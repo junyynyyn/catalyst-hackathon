@@ -4,12 +4,23 @@ import React from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  // const [isOpen, setIsOpen] = useState(false);
 
-  const openMenu = () => {(e) =>
-    (document.getElementById("pullout-menu").style.animation =
-      "menu-slide-in 1.5s ease forwards")
-  }
+  function openMenu() {
+    const element = document.getElementById("pullout-menu")
+    if (element) {
+     element.style.animation = "menu-slide-in 1.5s ease forwards"
+    }
+
+  };
+
+  function closeMenu() {
+    const element = document.getElementById("pullout-menu")
+    if (element) {
+     element.style.animation = ""
+    }
+  };
+
   return (
     <div>
       <div id="pullout-menu">
@@ -27,10 +38,7 @@ const Navbar = () => {
             <Link href="/league">
               <div
                 className="menu-item"
-                onClick={(e) =>
-                  (document.getElementById("pullout-menu").style.animation = "")
-                }
-              >
+                onClick={closeMenu}>
                 League of Legend
               </div>
             </Link>
