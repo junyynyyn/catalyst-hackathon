@@ -19,7 +19,7 @@ export default async function ItemPage({params}: {params: {
         <main>
         <h1>Item: {item.item_name}</h1>
         <h2>Item Price: {item.price} </h2>
-        <PriceListings price={parseInt(item.price)}/>
+        <PriceListings price={parseInt(item.price)} game_name={item.game}/>
         {/* <LowestCost price={parseInt(item.price)} gameName=''/> */}
         </main>
     );

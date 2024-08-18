@@ -5,6 +5,11 @@ import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const openMenu = () => {(e) =>
+    (document.getElementById("pullout-menu").style.animation =
+      "menu-slide-in 1.5s ease forwards")
+  }
   return (
     <div>
       <div id="pullout-menu">
@@ -25,7 +30,7 @@ const Navbar = () => {
             <Link href="/valorant">
               <div className="menu-item">Valorant</div>
             </Link>
-            <Link href="/">
+            <Link href="/genshin">
               <div className="menu-item">Genshin Impact</div>
             </Link>
             <Link href="/">
@@ -49,10 +54,7 @@ const Navbar = () => {
                 <img
                   className="menu-icon"
                   src="icons/bars-solid.svg"
-                  onClick={(e) =>
-                    (document.getElementById("pullout-menu").style.animation =
-                      "menu-slide-in 1.5s ease forwards")
-                  }
+                  onClick={openMenu}
                 />
               </div>
               <div className="menu-section">
