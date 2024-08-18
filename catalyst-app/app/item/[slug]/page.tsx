@@ -47,28 +47,6 @@ export default async function ItemPage({
         <PriceListings price={item.price} game_name={item.game} />
       </div>
 
-      <div className="product-row-1-col-2">
-        <div className="product-row-1-col-2-row-1">
-          <div className="product-header">{item.item_name}</div>
-        </div>
-        <div className="product-row-1-col-2-row-2">
-          <div className="product-price-label">Price: </div>
-        </div>
-        <div className="product-row-1-col-2-row-3">
-          {/* Get Currency Points from DB later */}
-          <div className="product-price">
-            <img src="" />
-            {item.price}
-            <br />
-            Points
-          </div>
-        </div>
-      </div>
-
-      <div className="product-row-2">
-        <PriceListings price={item.price} game_name={item.game} />
-      </div>
-
       <div className="product-row-3">
         <div className="product-row-3-header">Optimal Pack Permutation</div>
         <div className="pack-row">

@@ -1,5 +1,4 @@
 import prisma from '../lib/prisma'
-
 // Functions relating to currency calculations
 
 async function get_prices(game_string: string) {
