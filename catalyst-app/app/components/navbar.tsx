@@ -25,7 +25,14 @@ const Navbar = () => {
         <div id="pullout-menu-content">
           <div className="menu-list">
             <Link href="/league">
-              <div className="menu-item">League of Legend</div>
+              <div
+                className="menu-item"
+                onClick={(e) =>
+                  (document.getElementById("pullout-menu").style.animation = "")
+                }
+              >
+                League of Legend
+              </div>
             </Link>
             <Link href="/valorant">
               <div className="menu-item">Valorant</div>
