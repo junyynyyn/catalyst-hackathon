@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import LowestCost from '../../components/lowest_cost';
 import PriceListings from '@/app/components/price_listings';
