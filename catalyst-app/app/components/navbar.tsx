@@ -37,22 +37,19 @@ const Navbar = () => {
           <div className="menu-list">
             <Link href="/league">
               <div
-                className="menu-item"
-                onClick={closeMenu}>
-                League of Legend
-              </div>
+                className="menu-item" onClick={closeMenu}>League of Legends</div>
             </Link>
             <Link href="/valorant">
-              <div className="menu-item">Valorant</div>
+              <div className="menu-item" onClick={closeMenu}>Valorant</div>
             </Link>
             <Link href="/genshin">
-              <div className="menu-item">Genshin Impact</div>
+              <div className="menu-item" onClick={closeMenu}>Genshin Impact</div>
             </Link>
             <Link href="/">
-              <div className="menu-item">Honkair Star Rail (coming soon)</div>
+              <div className="menu-item">Honkai Star Rail (coming soon)</div>
             </Link>
             <Link href="/">
-              <div className="menu-item">Arkknights (coming soon)</div>
+              <div className="menu-item">Arknights (coming soon)</div>
             </Link>
           </div>
         </div>
@@ -78,12 +75,12 @@ const Navbar = () => {
               </div>
             </li>
             <li>
-              <Link href="/valorant" className="nav-btn">
+              {/* <Link href="/valorant" className="nav-btn">
                 My Profile
+              </Link> */}
+              <Link href="/cart">
+              <div className="nav-btn cart-btn">Basket (3)</div>
               </Link>
-              <a href="" className="nav-btn cart-btn">
-                Basket (0)
-              </a>
             </li>
           </ul>
         </nav>

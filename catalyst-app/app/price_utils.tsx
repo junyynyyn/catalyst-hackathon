@@ -26,13 +26,12 @@ async function currency_per_dollar(index: number, game_string: string) {
 async function get_lowest_required_value(amount: number, game_string: string) {
     // Gets lowest single price pack for an amount
     const prices: any = await get_prices(game_string);
-
     for (let i=0;i<prices.currency.length;i++) {
         if (prices.currency[i] >= amount) {
-            return prices.cost[i];
+            return prices.prices[i];
         }
     }
-    return 0;
+    return prices.prices[prices.currency.length - 1];
 }
 
 async function price_in_money(amount: number, convert_index: number, game_string: string) {
@@ -61,7 +60,6 @@ async function get_lowest_cost(amount: number, game_string: string) {
             // If combined cost is < than the bigger value, add the 2 lower ones
         }
     }
-
     return {currency_sum, price_sum};
 }
 
