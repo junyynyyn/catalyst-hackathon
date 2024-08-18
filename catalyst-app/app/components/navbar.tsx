@@ -7,19 +7,18 @@ const Navbar = () => {
   // const [isOpen, setIsOpen] = useState(false);
 
   function openMenu() {
-    const element = document.getElementById("pullout-menu")
+    const element = document.getElementById("pullout-menu");
     if (element) {
-     element.style.animation = "menu-slide-in 1.5s ease forwards"
+      element.style.animation = "menu-slide-in 1.5s ease forwards";
     }
-
-  };
+  }
 
   function closeMenu() {
-    const element = document.getElementById("pullout-menu")
+    const element = document.getElementById("pullout-menu");
     if (element) {
-     element.style.animation = ""
+      element.style.animation = "";
     }
-  };
+  }
 
   return (
     <div>
@@ -36,20 +35,29 @@ const Navbar = () => {
         <div id="pullout-menu-content">
           <div className="menu-list">
             <Link href="/league">
-              <div
-                className="menu-item" onClick={closeMenu}>League of Legends</div>
+              <div className="menu-item" onClick={closeMenu}>
+                League of Legends
+              </div>
             </Link>
             <Link href="/valorant">
-              <div className="menu-item" onClick={closeMenu}>Valorant</div>
+              <div className="menu-item" onClick={closeMenu}>
+                Valorant
+              </div>
             </Link>
             <Link href="/genshin">
-              <div className="menu-item" onClick={closeMenu}>Genshin Impact</div>
+              <div className="menu-item" onClick={closeMenu}>
+                Genshin Impact
+              </div>
             </Link>
             <Link href="/">
-              <div className="menu-item">Honkai Star Rail (coming soon)</div>
+              <div className="menu-item non-clickable">
+                Honkai Star Rail (coming soon)
+              </div>
             </Link>
             <Link href="/">
-              <div className="menu-item">Arknights (coming soon)</div>
+              <div className="menu-item non-clickable">
+                Arknights (coming soon)
+              </div>
             </Link>
           </div>
         </div>
@@ -79,7 +87,7 @@ const Navbar = () => {
                 My Profile
               </Link> */}
               <Link href="/cart">
-              <div className="nav-btn cart-btn">Basket (3)</div>
+                <div className="nav-btn cart-btn">Basket (3)</div>
               </Link>
             </li>
           </ul>
