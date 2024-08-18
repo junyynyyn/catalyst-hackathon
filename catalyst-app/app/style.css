@@ -47,12 +47,12 @@ h1 {
 }
 
 .nav-btn {
-    width: 5rem;
+    max-width: 1rem;
+    width: 1rem;
     padding: 0.5rem 1.2rem;
     border-radius: 0.5rem;
     text-decoration: none;
 }
-
 
 .menu-icon {
     height: 1rem;
@@ -213,6 +213,7 @@ h1 {
 .game-item-desc {
     margin-top: 0.8rem;
 }
+
 .organise-opt-container {
     display: flex;
     justify-content: space-between;
@@ -444,10 +445,6 @@ h1 {
     width: 100%;
 }
 
-.cart-col {
-
-}
-
 .cart-container {
     display: flex;
     align-items: center;
@@ -488,4 +485,126 @@ h1 {
     font-size: 1.4rem;
     margin-top: 1.2rem;
     font-weight: 600;
+}
+
+.individual-product-container {
+    margin: 3rem 5rem; 
+    padding: 3rem 4rem;
+    border-radius: 2.5rem;
+}
+
+
+.product-header {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 900;
+}
+
+.product-row-1 {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.product-row-1-col-2-row-1 {
+    text-align: center;
+}
+
+.product-row-1-col-2-row-2 {
+    font-size: 3rem;
+}
+
+.product-row-1-col-2-row-3 {
+    text-align: right;
+}
+
+.product-price {
+    font-size: 3rem;
+}
+
+.product-price img {
+    height: 3rem;
+}
+
+.product-img img {
+    width: 30rem;
+    padding: 5rem 2rem;
+    background-color: #FAFAF5;
+    border: 2px solid #E6E6E6;
+    border-radius: 1rem;
+}
+
+.product-row-2 {
+    background-color: lightgray;
+    margin-top: 2rem;
+    border-radius: 2.5rem;
+}
+
+.pack-table {
+    border: 1px solid black;
+    width: 100%;
+    background-color: lightgray;
+    margin-top: 2rem;
+    border-radius: 2px;
+    border-spacing: 0.3rem;
+}
+
+.pack-table .table-row:hover {
+    background-color: #FAFAF5;
+}
+
+.table-row {
+    transition: ease-in-out 0.5s;
+}
+
+.header-row th {
+    background-color: gray;
+    border: 1px solid gray;
+    color: white;
+    box-shadow: 1px 1px black;
+    border-radius: 2px;
+}
+
+.pack-table td {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid gray;
+    border-radius: 2px;
+}
+
+.product-row-3 {
+    background-color: lightgray;
+    margin-top: 2rem;
+    border-radius: 2.5rem;
+}
+
+.product-row-3-header {
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 2.5rem;
+    padding: 1rem 2rem;
+}
+
+.pack-list {
+    max-height: 15rem;
+    overflow: scroll;
+    padding: 1rem;
+    width: 50%;
+}
+
+.pack {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+    padding: 1rem 1rem;
+    border: 1px solid black;
+    
+
+}
+
+.pack img {
+    height: 1.5rem;
+    margin-right: 0.6rem;
 }
