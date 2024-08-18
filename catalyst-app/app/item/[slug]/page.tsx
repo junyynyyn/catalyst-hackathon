@@ -2,7 +2,6 @@ import React from "react";
 import LowestCost from "../../components/lowest_cost";
 import PriceListings from "@/app/components/price_listings";
 import { get_item } from "@/app/item_utils";
-import { useParams } from "next/navigation";
 import Link from "next/link";
 
 export default async function ItemPage({
@@ -44,7 +43,7 @@ export default async function ItemPage({
         </div>
       </div>
       <div className="product-row-2">
-        <PriceListings price={item.price} game_name={item.game} />
+        {/* <PriceListings price={item.price} game_name={item.game} /> */}
       </div>
 
       <div className="product-row-3">
