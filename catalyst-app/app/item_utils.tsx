@@ -4,7 +4,7 @@ import prisma from '../lib/prisma'
 
 async function get_items(game_string: string) {
     const items: any = await prisma.item.findMany({
-        where: {game: game_string},
+        where: {game: game_string, price: {gt:0}},
         orderBy: {
             id: 'asc'
         }
