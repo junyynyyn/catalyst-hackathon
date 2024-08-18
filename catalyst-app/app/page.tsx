@@ -5,6 +5,7 @@ import { get_prices } from "./price_utils";
 export default async function Home() {
   // const league_prices = await get_prices('valorant');
   // console.log(league_prices.currency);
+  // test
   return (
     <div>
       <div>
