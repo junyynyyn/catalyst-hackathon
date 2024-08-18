@@ -14,7 +14,7 @@ export default async function ValorantHome() {
                 <p>
                     <div className="game-item-name">{item.item_name}</div>
                     <div className="game-item-price">{item.price}</div>
-                    <div className="game-item-desc">Boiler Text</div>
+                    <div className="game-item-desc">{item.info}</div>
                 </p>
             </div>
         </div>

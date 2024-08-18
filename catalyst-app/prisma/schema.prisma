@@ -30,4 +30,5 @@ model Item {
   price Int
   item_name String
   picture String
+  info String
 }
