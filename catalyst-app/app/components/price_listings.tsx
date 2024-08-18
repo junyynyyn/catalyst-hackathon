@@ -12,26 +12,34 @@ const PriceListings = async (props: {price: number, game_name: string}) => {
             remainder = 0
         }
         return (
-        <li key={id}>   
-            <ul className={styles.priceList}>
-                <li className={styles.priceTableComponent}>{valo_prices.currency[id]}</li>
-                <li className={styles.priceTableComponent}>${valo_prices.prices[id]}</li>
-                <li className={styles.priceTableComponent}>{per_dollar}</li>
-                <li className={styles.priceTableComponent}>${item_price}</li>
-                <li className={styles.priceTableComponent}>{remainder}</li>
-            </ul>
-        </li>
+        <tr className="table-row">
+            <td>{valo_prices.currency[id]}</td>
+            <td>{valo_prices.prices[id]}</td>
+            <td>{per_dollar}</td>
+            <td>${item_price}</td>
+            <td>{remainder}</td>
+        </tr>
     )});
     return (
-        <div>
-            <ul className={styles.priceList}>
-                <li className={styles.priceTableComponent}>Pack Amount</li>
-                <li className={styles.priceTableComponent}>Pack Amount</li>
-            </ul>
-            <ul>
-                {listItems}
-            </ul>
-        </div>
+        // <div>
+        //     <ul className={styles.priceList}>
+        //         <li className={styles.priceTableComponent}>Pack Amount</li>
+        //         <li className={styles.priceTableComponent}>Pack Amount</li>
+        //     </ul>
+        //     <ul>
+        //         {listItems}
+        //     </ul>
+        // </div>
+        <table className="pack-table">
+            <tr className="header-row">
+                <th>Game Currency</th>
+                <th>Currency Per Pack</th>
+                <th>Currency Per Dollar</th>
+                <th>Cost in Dollars</th>
+                <th>Leftover</th>
+            </tr>
+            {listItems}
+        </table>
     )
 }
 
