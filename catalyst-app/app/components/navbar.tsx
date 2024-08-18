@@ -69,13 +69,9 @@ const Navbar = () => {
 
         <nav>
           <ul className="nav-bar">
-            <li>
+            <li onClick={openMenu}>
               <div className="menu-section">
-                <img
-                  className="menu-icon"
-                  src="icons/bars-solid.svg"
-                  onClick={openMenu}
-                />
+                <img className="menu-icon" src="icons/bars-solid.svg" />
               </div>
               <div className="menu-section">
                 <div className="games">games</div>
