@@ -12,6 +12,14 @@ async function get_items(game_string: string) {
     return items;
 }
 
+async function get_item(item_id: number) {
+    const item: any = await prisma.item.findFirst({
+        where: {id: item_id}
+    });
+    return item;
+}
+
 export {
-    get_items
+    get_items,
+    get_item
 };
