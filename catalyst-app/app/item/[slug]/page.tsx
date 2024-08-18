@@ -14,13 +14,8 @@ export default async function ItemPage({
   if (!parseInt(params.slug)) {
     return <></>;
   }
-  // <main>
-  // <h1>Item: {item.item_name}</h1>
-  // <h2>Item Price: {item.price} </h2>
-  // <PriceListings price={parseInt(item.price)} game_name={item.game}/>
-  // {/* <LowestCost price={parseInt(item.price)} gameName=''/> */}
-  // </main>
   const item = await get_item(parseInt(params.slug));
+
   return (
     <div className="individual-product-container">
       <div className="product-row-1">
@@ -47,6 +42,28 @@ export default async function ItemPage({
           </div>
         </div>
       </div>
+      <div className="product-row-2">
+        <PriceListings price={item.price} game_name={item.game} />
+      </div>
+
+      <div className="product-row-1-col-2">
+        <div className="product-row-1-col-2-row-1">
+          <div className="product-header">{item.item_name}</div>
+        </div>
+        <div className="product-row-1-col-2-row-2">
+          <div className="product-price-label">Price: </div>
+        </div>
+        <div className="product-row-1-col-2-row-3">
+          {/* Get Currency Points from DB later */}
+          <div className="product-price">
+            <img src="" />
+            {item.price}
+            <br />
+            Points
+          </div>
+        </div>
+      </div>
+
       <div className="product-row-2">
         <PriceListings price={item.price} game_name={item.game} />
       </div>
