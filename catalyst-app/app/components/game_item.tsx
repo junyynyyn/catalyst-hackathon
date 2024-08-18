@@ -4,7 +4,7 @@ import Link from 'next/link'
 const GameItem = (item: any) => {
     return (
       <div className="game-item">
-        <img src={item.item.picture}/>
+        <img className="game-item-picture" src={item.item.picture}/>
         <Link href={"/item/" + item.item.id}>
         <div className="game-item-content">
             <div className="game-item-name">{item.item.item_name}</div>
