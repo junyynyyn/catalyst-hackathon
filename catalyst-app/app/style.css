@@ -213,6 +213,13 @@ h1 {
 .game-item-desc {
     margin-top: 0.8rem;
 }
+
+.game-item-picture {
+    height: 400px;
+    width: auto;
+    
+}
+
 .organise-opt-container {
     display: flex;
     justify-content: space-between;
