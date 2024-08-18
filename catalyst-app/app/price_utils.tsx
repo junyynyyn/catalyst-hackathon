@@ -11,7 +11,7 @@ async function get_prices(game_string: string) {
     });
     const prices: any = {currency: [], prices: []}
     for (let i=0;i<db_prices.length;i++) {
-        prices.currency.push(db_prices[i].currency);
+        prices.currency.push(db_prices[i].points);
         prices.prices.push(db_prices[i].price);
     }
 

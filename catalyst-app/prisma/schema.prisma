@@ -6,29 +6,39 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl= env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String?
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+model Currency {
+  id      Int     @id @default(autoincrement())
+  name    String
+  picture String
+  Price   Price[]
 }
 
 model Price {
-  id Int @id @default(autoincrement())
-  game String
-  currency Int
-  price Float
+  id           Int      @id @default(autoincrement())
+  game         String
+  currency     Currency @relation(fields: [currencyId], references: [id])
+  currencyId   Int
+  points       Int
+  price        Float
+  irl_currency String
 }
 
 model Item {
-  id Int @id @default(autoincrement())
-  game String
-  price Int
+  id        Int    @id @default(autoincrement())
+  game      String
+  price     Int
   item_name String
-  picture String
-  info String
+  picture   String
+  info      String
 }

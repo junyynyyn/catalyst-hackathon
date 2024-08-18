@@ -1,23 +1,11 @@
 import { useParams } from 'next/navigation';
 import { get_items } from '../item_utils';
+import GameItem from '../components/game_item';
 
 export default async function ValorantHome() {
     const items = await get_items("valorant");
     const items_list = items.map((item: any) => (
-        // <div>
-        //     <h2>{item.item_name}</h2>
-        //     <img src={item.picture} alt={item.item_name} />
-        // </div>
-        <div className="game-item">
-            <img src={item.picture}/>
-            <div className="game-item-content">
-                <p>
-                    <div className="game-item-name">{item.item_name}</div>
-                    <div className="game-item-price">{item.price}</div>
-                    <div className="game-item-desc">{item.info}</div>
-                </p>
-            </div>
-        </div>
+        <GameItem item={item}/>
     ));
     return (
         <div>

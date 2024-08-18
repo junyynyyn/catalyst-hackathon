@@ -46,7 +46,14 @@ const Navbar = () => {
           <ul className="nav-bar">
             <li>
               <div className="menu-section">
-                <img className="menu-icon" src="icons/bars-solid.svg" />
+                <img
+                  className="menu-icon"
+                  src="icons/bars-solid.svg"
+                  onClick={(e) =>
+                    (document.getElementById("pullout-menu").style.animation =
+                      "menu-slide-in 1.5s ease forwards")
+                  }
+                />
               </div>
               <div className="menu-section">
                 <div className="games">games</div>

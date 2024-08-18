@@ -1,5 +1,5 @@
 import React from 'react'
-import { get_prices, currency_per_dollar, get_lowest_required_value, price_in_money} from '../../price_utils';
+import { get_prices, currency_per_dollar, get_lowest_required_value, price_in_money} from '../price_utils';
 import styles from './price_listing.module.css';
 
 const PriceListings = async (props: {price: number}) => {
