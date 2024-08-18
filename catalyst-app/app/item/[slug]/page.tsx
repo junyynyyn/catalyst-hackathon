@@ -1,4 +1,3 @@
-"use server"
 import React from 'react'
 import LowestCost from '../../components/lowest_cost';
 import PriceListings from '@/app/components/price_listings';
@@ -16,6 +15,7 @@ export default async function ItemPage({params}: {params: {
         )
     }
     const item = await get_item(parseInt(params.slug));
+
     return (
         <div className="individual-product-container">
             <div className="product-row-1">
